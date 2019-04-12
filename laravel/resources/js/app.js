@@ -1,4 +1,3 @@
-
 /**
  * First we will load all of this project's JavaScript dependencies which
  * includes Vue and other libraries. It is a great starting point when
@@ -7,7 +6,24 @@
 
 require('./bootstrap');
 
-window.Vue = require('vue');
+// window.Vue = require('vue');
+import Vue from 'vue'
+
+import Vuetify from 'vuetify'
+import colors from 'vuetify/es5/util/colors'
+
+Vue.use(Vuetify, {
+    theme: {
+        primary: colors.indigo.base,
+        secondary: colors.blue.base,
+        accent: colors.amber.base,
+    }
+});
+
+import 'vuetify/dist/vuetify.min.css'
+import 'material-design-icons-iconfont/dist/material-design-icons.css'
+
+import router from './router'
 
 /**
  * The following block of code may be used to automatically register your
@@ -29,5 +45,6 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
  */
 
 const app = new Vue({
-    el: '#app'
+    el: '#app',
+    router,
 });
